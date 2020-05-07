@@ -78,15 +78,12 @@ public class ProductServiceImpl implements IProductService{
     @Override
     public Product modifyProduct(Product product)
     {
-    	String productId=product.getProductId();
-    	Optional<Product> optional=dao.findById(productId);
-    	if(optional.isPresent()) {
-    	Product product1=optional.get();
-    	product1=dao.save(product);
+    	
+    	Product product1=dao.save(product);
         return product1;
     	}
-    	throw new ProductNotFoundException("No Product is Modified");
-    }
+    	
+    
     
     
     /*
