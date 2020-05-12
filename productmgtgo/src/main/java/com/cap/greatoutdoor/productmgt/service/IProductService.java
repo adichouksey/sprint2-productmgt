@@ -3,17 +3,17 @@ package com.cap.greatoutdoor.productmgt.service;
 
 import java.util.List;
 
-import com.cap.greatoutdoor.productmgt.entities.Product;
+import com.cap.greatoutdoor.productmgt.entities.ProductDTO;
 
 public interface IProductService {
 
-    Product findProductById(String productId);
+    ProductDTO findProductById(String productId);
 
-    Product addProduct(Product prodcut);
+    ProductDTO addProduct(ProductDTO prodcut);
 
-    List<Product>fetchAllProducts();
+    List<ProductDTO>fetchAllProducts();
     
     boolean deleteProduct(String productId);
     
-    Product modifyProduct(Product product);
+    ProductDTO modifyProduct(ProductDTO product);
 }

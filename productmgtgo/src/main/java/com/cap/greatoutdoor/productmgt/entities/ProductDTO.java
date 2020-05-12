@@ -1,94 +1,124 @@
 package com.cap.greatoutdoor.productmgt.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Objects;
 
+@Entity
+@Table(name = "products")
 public class ProductDTO {
 
-	  private String productId;
-	    private double productPrice;
-	    private String productColor;
-	    private String productDimension;
-	    private String productSpecification;
-	    private String productManfucturer;
-	    private int quantity;
-	    private int productCategory;
-	    private String productName;
-	   
-	    public String getProductId() {
-			return productId;
-		}
+	@Id
 
-		public void setProductId(String productId) {
-			this.productId = productId;
-		}
+	private String productId;
+	private double productPrice;
+	private String productColor;
+	private String productDimension;
+	private String productSpecification;
+	private String productManfucturer;
+	private int quantity;
+	private int productCategory;
+	private String productName;
 
-		public double getProductPrice() {
-			return productPrice;
-		}
+	public String getProductId() {
+		return productId;
+	}
 
-		public void setProductPrice(double productPrice) {
-			this.productPrice = productPrice;
-		}
+	public void setProductId(String productId) {
+		this.productId = productId;
+	}
 
-		public String getProductColor() {
-			return productColor;
-		}
+	public double getProductPrice() {
+		return productPrice;
+	}
 
-		public void setProductColor(String productColor) {
-			this.productColor = productColor;
-		}
+	public void setProductPrice(double productPrice) {
+		this.productPrice = productPrice;
+	}
 
-		public String getProductDimension() {
-			return productDimension;
-		}
+	public String getProductColor() {
+		return productColor;
+	}
 
-		public void setProductDimension(String productDimension) {
-			this.productDimension = productDimension;
-		}
+	public void setProductColor(String productColor) {
+		this.productColor = productColor;
+	}
 
-		public String getProductSpecification() {
-			return productSpecification;
-		}
+	public String getProductDimension() {
+		return productDimension;
+	}
 
-		public void setProductSpecification(String productSpecification) {
-			this.productSpecification = productSpecification;
-		}
+	public void setProductDimension(String productDimension) {
+		this.productDimension = productDimension;
+	}
 
-		public String getProductManfucturer() {
-			return productManfucturer;
-		}
+	public String getProductSpecification() {
+		return productSpecification;
+	}
 
-		public void setProductManfucturer(String productManfucturer) {
-			this.productManfucturer = productManfucturer;
-		}
+	public void setProductSpecification(String productSpecification) {
+		this.productSpecification = productSpecification;
+	}
 
-		public int getQuantity() {
-			return quantity;
-		}
+	public String getProductManfucturer() {
+		return productManfucturer;
+	}
 
-		public void setQuantity(int quantity) {
-			this.quantity = quantity;
-		}
+	public void setProductManfucturer(String productManfucturer) {
+		this.productManfucturer = productManfucturer;
+	}
 
-		public int getProductCategory() {
-			return productCategory;
-		}
+	public int getQuantity() {
+		return quantity;
+	}
 
-		public void setProductCategory(int productCategory) {
-			this.productCategory = productCategory;
-		}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 
-		public String getProductName() {
-			return productName;
-		}
+	public int getProductCategory() {
+		return productCategory;
+	}
 
-		public void setProductName(String productName) {
-			this.productName = productName;
-		}
+	public void setProductCategory(int productCategory) {
+		this.productCategory = productCategory;
+	}
 
+	public String getProductName() {
+		return productName;
+	}
 
-		
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
 
+	/**
+	 * To Check Equality of Product object
+	 * 
+	 * @param object
+	 * @return
+	 */
 
-	
+	@Override
+	public boolean equals(Object object) {
+		if (this == object)
+			return true;
+		if (object == null || !(object instanceof ProductDTO))
+			return false;
+		ProductDTO product = (ProductDTO) object;
+		return productId == product.productId;
+	}
+
+	/**
+	 * Override Hascode
+	 * 
+	 * @return hash
+	 */
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(productId);
+	}
 }

@@ -10,9 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * this is equal to three annotations
- * 1) @Configuration
- * 2)@ComponentScan
+ * this is equal to three annotations 1) @Configuration 2)@ComponentScan
  * 3)@EnableAutoConfiguration
  */
 @SpringBootApplication
@@ -24,7 +22,7 @@ public class ProductManagementApplication {
 	}
 
 	@Bean
-	public RestTemplate restTemplate(){
+	public RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
 
