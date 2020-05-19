@@ -1,0 +1,89 @@
+<br>
+<h3>MODIFICATION OF PRODUCT DETAILS</h3>
+<div>
+    <div class="container">
+        
+<form class="in-line" #data="ngForm"  (ngSubmit)="modifyProduct(data)">
+    <div>
+        <br>   
+    <label>PRODUCT ID</label>
+     <input type="text" class="form-control" ngModel name="productId">
+    </div>
+
+    <div>
+        <br>
+    <label>PRODUCT PRICE</label>
+    <input type="number" class="form-control" ngModel name="productPrice">
+    </div>    
+    
+    <div>
+        <br>
+        <label>PRODUCT COLOR</label>
+        <input type="text" class="form-control" ngModel name="productColor">
+
+        </div>    
+        
+ <div>
+    <br>
+    <label>DIMENSION</label>
+    <input type="text" class="form-control" ngModel name="productDimension">
+    </div>    
+
+    <div>
+        <br>
+        <label>SPECIFICATION</label>
+        <input type="text" class="form-control" ngModel name="productSpecification">
+        </div>    
+        
+    
+
+        <div>
+            <br>
+            <label>PRODUCT MANUFACTURER</label>
+            <input type="text" class="form-control" ngModel name="productManfucturer">
+            </div>    
+            
+
+            <div>
+                <br>
+                <label>QUANTITY</label>
+                <input type="number" class="form-control" ngModel name="quantity">
+                </div>    
+
+
+                
+            <div>
+                <br>
+                <label>PRODUCT CATEGORY</label>
+                <input type="number" class="form-control" ngModel name="productCategory">
+                </div>    
+
+
+                <div>
+                    <br>
+                    <label>PRODUCT NAME</label>
+                    <input type="text" class="form-control" ngModel name="productName">
+                    </div>    
+<br>
+<div>
+    <button class="btn btn-success" type="submit">Modify Product</button>
+</div>
+</form>
+ </div>
+</div>
+<div *ngIf="modifiedProduct!==null">
+    <h3>Product  Added</h3>  
+     <br> ID= {{modifiedProduct.productId}}
+     <br> PRICE={{modifiedProduct.productPrice}}
+     <br> COLOR={{modifiedProduct.productColor}}
+     <br> Dimension={{modifiedProduct.productDimension}}
+     <br> Manfucturer={{modifiedProduct.productManfucturer}}
+     <br> Specification={{modifiedProduct.productSpecification}}
+     <br> Quantity={{modifiedProduct.quantity}}
+     <br> ProductCategory={{modifiedProduct.productCategory}}
+     <br> ProductName={{modifiedProduct.productName}}
+    </div>
+       
+
+    <br>
+    <a href=""  class="btn btn-primary" role="button" routerLink="../product-mgt">Previous</a>

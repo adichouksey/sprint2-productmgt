@@ -1,0 +1,37 @@
+<br>
+
+<form  #data ="ngForm"  (ngSubmit)="data.valid && findProduct(data)">
+    <div>
+        <h1>FIND PRODUCT</h1>
+        <div>
+            <label>PRODUCT ID</label>
+            <input type="text" class="form-control" name="productId" ngModel  #productIdCtrl=ngModel required >
+            <div *ngIf="productIdCtrl.errors!=null && productIdCtrl.errors.required">
+                 required
+            </div>
+            
+        </div>
+    </div>
+    <br>
+    <button class="btn btn-success" type="submit">Find Product</button>
+</form>
+
+<div *ngIf="foundStatus==='found'">
+    <br> ID= {{foundProduct.productId}}
+ <br> PRICE={{foundProduct.productPrice}}
+ <br> COLOR={{foundProduct.productColor}}
+ <br> Dimension={{foundProduct.productDimension}}
+ <br> Manfucturer={{foundProduct.productManfucturer}}
+ <br> Specification={{foundProduct.productSpecification}}
+ <br> Quantity={{foundProduct.quantity}};
+ <br> ProductCategory={{foundProduct.productCategory}}
+ <br> ProductName={{foundProduct.productName}}
+</div>
+
+<div *ngIf="foundStatus=='notfound'">
+    Product not found !
+    </div>
+
+    <br>
+    <a href=""  class="btn btn-primary" role="button" routerLink="../product-mgt">Previous</a>
+

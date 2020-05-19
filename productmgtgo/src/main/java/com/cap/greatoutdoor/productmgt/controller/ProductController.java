@@ -57,10 +57,11 @@ public class ProductController {
 	 */
 
 	@PostMapping("/add")
-	public ResponseEntity<ProductDTO> addProduct(@RequestBody Map<String, Object> requestdata) {
+	public ResponseEntity<Object> addProduct(@RequestBody Map<String, Object> requestdata) {
+		
 		ProductDTO productdto = ProductUtil.convertToProductDTO(requestdata);
-		productdto = productservice.addProduct(productdto);
-		ResponseEntity<ProductDTO> response = new ResponseEntity<>(productdto, HttpStatus.OK);
+		boolean result = productservice.addProduct(productdto);
+		ResponseEntity<Object> response = new ResponseEntity<>(result, HttpStatus.OK);
 		return response;
 	}
 
@@ -73,12 +74,11 @@ public class ProductController {
 	 */
 
 	@PutMapping("/modify/{productId}")
-	public ResponseEntity<ProductDTO> modifyProduct(@PathVariable("productId") String productId,
-			@RequestBody Map<String, Object> requestdata) {
+	public ResponseEntity<Object> modifyProduct(@RequestBody Map<String, Object> requestdata,@PathVariable("productId") String productId) {
 			ProductDTO productdto=productservice.findProductById(productId);
 		ProductDTO productdtos = ProductUtil.convertToProductDTO(requestdata);
-		productdtos = productservice.modifyProduct(productdtos);
-		ResponseEntity<ProductDTO> response = new ResponseEntity<>(productdtos, HttpStatus.OK);
+		boolean result = productservice.modifyProduct(productdtos);
+		ResponseEntity<Object> response = new ResponseEntity<>(productdto, HttpStatus.OK);
 		return response;
 	}
 
@@ -104,10 +104,8 @@ public class ProductController {
 	 */
 
 	@DeleteMapping("/delete/{productId}")
-	public ResponseEntity<Boolean> deleteProduct(@PathVariable("productId") String productId,
-			@RequestBody Map<String, Object> requestdata) {
-		ProductDTO productdto=productservice.findProductById(productId);
-		ProductDTO productdtos = ProductUtil.convertToProductDTO(requestdata);
+	public ResponseEntity<Boolean> deleteProduct(@PathVariable("productId") String productId) {
+		
 		boolean result = productservice.deleteProduct(productId);
 		ResponseEntity<Boolean> response = new ResponseEntity<>(result, HttpStatus.OK);
 		return response;

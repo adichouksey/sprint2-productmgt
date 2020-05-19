@@ -1,0 +1,112 @@
+<br>
+<h2> PRODUCT DETAILS </h2>
+<div>
+    <div class="container">
+        
+<form class="in-line" #data="ngForm"  (ngSubmit)="addProduct(data)">
+    <div>   
+        <br>
+    <label>PRODUCT ID</label>
+    <input type="text" class="form-control" name="productId" ngModel  #productIdCtrl=ngModel required >
+    <div *ngIf="productIdCtrl.errors!=null && productIdCtrl.errors.required">
+        required
+    </div>
+</div> 
+    <div>
+        <br>
+    <label>PRODUCT PRICE</label>
+    <input type="number" class="form-control" name="productPrice" ngModel  #productPriceCtrl=ngModel required >
+    <div *ngIf="productPriceCtrl.errors!=null && productPriceCtrl.errors.required">
+        required
+    </div>    
+</div> 
+    <div>
+        <br>
+        <label>PRODUCT COLOR</label>
+        <input type="text" class="form-control" name="productColor" ngModel  #productColorCtrl=ngModel required >
+        <div *ngIf="productColorCtrl.errors!=null && productColorCtrl.errors.required">
+            required
+
+        </div>    
+    </div>  
+ <div>
+    <br>    
+    <label>PRODUCT DIMENSION</label>
+    <input type="text" class="form-control" name="productDimension" ngModel  #productDimensionCtrl=ngModel required >
+    <div *ngIf="productDimensionCtrl.errors!=null && productDimensionCtrl.errors.required">
+        required
+    </div>    
+</div> 
+    <div>
+        <br>
+        <label>PRODUCT SPECIFICATION</label>
+        <input type="text" class="form-control" name="productSpecification" ngModel  #productSpecificationCtrl=ngModel required >
+        <div *ngIf="productSpecificationCtrl.errors!=null && productSpecificationCtrl.errors.required">
+            required
+        </div>    
+    </div> 
+    
+    
+
+        <div>
+            <br>
+            <label>PRODUCT MANIFACTURER</label>
+            <input type="text" class="form-control" name="productManfucturer" ngModel  #productManfucturerCtrl=ngModel required >
+        <div *ngIf="productManfucturerCtrl.errors!=null && productManfucturerCtrl.errors.required">
+            required
+            </div>    
+        </div>    
+
+            <div>
+                <br>
+                <label>PRODUCT QUANTITY</label>
+                <input type="number" class="form-control" name="quantity" ngModel  #quantityCtrl=ngModel required >
+                <div *ngIf="quantityCtrl.errors!=null && quantityCtrl.errors.required">
+                    required
+                </div>    
+            </div>    
+
+                
+            <div>
+                <br>
+                <label>PRODUCT CATEGORY</label>
+                <input type="number" class="form-control" name="productCategory" ngModel  #productCategoryCtrl=ngModel required >
+                <div *ngIf="productCategoryCtrl.errors!=null && productCategoryCtrl.errors.required">
+                    required
+                </div>    
+
+            </div>    
+                <div>
+                    <br>
+                    <label>PRODUCT NAME</label>
+                    <input type="text" class="form-control" name="productName" ngModel  #productNameCtrl=ngModel required >
+                    <div *ngIf="productNameCtrl.errors!=null && productNameCtrl.errors.required">
+                        required
+    
+                    </div>    
+                </div>    
+<br>
+<div>
+    <button class="btn btn-success" type="submit">Add Product</button>
+</div>
+
+
+</form>
+ </div>
+</div>
+
+<div *ngIf="addedProduct!==null">
+<h3>Product  Added</h3>  
+ <br> ID= {{addedProduct.productId}}
+ <br> PRICE={{addedProduct.productPrice}}
+ <br> COLOR={{addedProduct.productColor}}
+ <br> Dimension={{addedProduct.productDimension}}
+ <br> Manfucturer={{addedProduct.productManfucturer}}
+ <br> Specification={{addedProduct.productSpecification}}
+ <br> Quantity={{addedProduct.quantity}}
+ <br> ProductCategory={{addedProduct.productCategory}}
+ <br> ProductName={{addedProduct.productName}}
+</div>
+  
+<br>
+<a href=""  class="btn btn-primary" role="button" routerLink="../product-mgt">Previous</a>

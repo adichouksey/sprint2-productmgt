@@ -1,0 +1,33 @@
+<br>
+<h1>PRODUCT LIST</h1>
+<br>
+<table border="1" class="table">
+    <thead>
+    <tr>
+        <th scope="col">PRODUCT ID</th>
+        <th scope="col">PRODUCT PRICE</th>
+        <th scope="col">PRODUCT COLOR</th>
+        <th scope="col">PRODUCT DIMENSION</th>
+        <th scope="col">PRODUCT SPECIFICATION</th>
+        <th scope="col">PRODUCT MANUFACTURER</th>
+        <th scope="col">PRODUCT CATEGORY</th>
+        <th scope="col">PRODUCT QUANTITY</th>
+        <th scope="col">PROUDUCT NAME</th>
+    </tr>
+</thead>
+    <tr *ngFor="let product of products">
+        <td>{{product.productId}}</td>
+        <td>{{product.productPrice}}</td>
+        <td>{{product.productColor}}</td>
+        <td>{{product.productDimension}}</td>
+        <td>{{product.productSpecification}}</td>
+        <td>{{product.productManfucturer}}</td>
+        <td>{{product.quantity}}</td>
+        <td>{{product.productCategory}}</td>
+        <td>{{product.productName}}</td>
+    </tr>
+    
+
+</table>
+<br>
+<a href=""  class="btn btn-primary" role="button" routerLink="../product-mgt">Previous</a>

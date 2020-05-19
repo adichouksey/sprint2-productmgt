@@ -9,11 +9,11 @@ public interface IProductService {
 
     ProductDTO findProductById(String productId);
 
-    ProductDTO addProduct(ProductDTO prodcut);
+    boolean addProduct(ProductDTO prodcut);
 
     List<ProductDTO>fetchAllProducts();
     
     boolean deleteProduct(String productId);
     
-    ProductDTO modifyProduct(ProductDTO product);
+   boolean modifyProduct(ProductDTO product);
 }
